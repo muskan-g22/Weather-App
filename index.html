@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="weather-app">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Weatherly 🌤️</h1>
+            <p>Check the weather anywhere in the world</p>
+        </header>
+
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <div class="top-controls">
+
+                <button id="themeBtn" class="icon-btn">
+                    🌙
+                </button>
+
+                <div class="unit-toggle">
+                    <button id="celsiusBtn" class="unit-btn active">
+                        °C
+                    </button>
+
+                    <button id="fahrenheitBtn" class="unit-btn">
+                        °F
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="search-wrapper">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder="Search for a city..."
+                        autocomplete="off"
+                    >
+
+                    <button id="searchBtn">
+                    🔍
+                    </button>
+
+                </div>
+
+                <!-- Suggestions will appear here -->
+                <div id="suggestions" class="suggestions"></div>
+
+            </div>
+
+            <p id="errorMessage"></p>
+
+        </section>
+
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather...</p>
+        </div>
+
+
+        <!-- Current Weather -->
+        <section id="currentWeather" class="current-weather hidden">
+
+            <div class="location">
+                <h2 id="cityName">Delhi, India</h2>
+                <p id="currentDate"></p>
+            </div>
+
+            <div class="current-main">
+
+                <div>
+                    <div id="weatherIcon" class="weather-icon">☀️</div>
+
+                    <div class="temperature">
+                        <span id="temperature">--</span>
+                        <span id="temperatureUnit">°C</span>
+                    </div>
+
+                    <p id="description">Clear sky</p>
+                </div>
+
+            </div>
+
+
+            <!-- Weather Details -->
+            <div class="weather-details">
+
+                <div class="detail">
+                    <span class="detail-icon">💧</span>
+                    <p>Humidity</p>
+                    <strong id="humidity">--%</strong>
+                </div>
+
+                <div class="detail">
+                    <span class="detail-icon">💨</span>
+                    <p>Wind</p>
+                    <strong id="wind">-- km/h</strong>
+                </div>
+
+                <div class="detail">
+                    <span class="detail-icon">🌡️</span>
+                    <p>Feels Like</p>
+                    <strong id="feelsLike">--°C</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Forecast -->
+        <section id="forecastSection" class="forecast-section hidden">
+
+            <h2>7-Day Forecast</h2>
+
+            <div id="forecastContainer" class="forecast-container">
+                <!-- Forecast cards will be created by JavaScript -->
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
